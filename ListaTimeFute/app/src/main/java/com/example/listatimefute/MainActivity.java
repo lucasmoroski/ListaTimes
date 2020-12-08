@@ -16,7 +16,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerViewTimes;
+    private RecyclerView ViewTimes;
     public static List<TimesFut> timesFutList = new ArrayList<>();
 
     @Override
@@ -24,30 +24,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerViewTimes = findViewById(R.id.recyclerViewTimes);
+        ViewTimes = findViewById(R.id.recyclerViewTimes);
 
         this.createTimes();
-        descricao adapter = new descricao(timesFutList);
+        Descricao adapter = new Descricao(timesFutList);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerViewTimes.setLayoutManager(layoutManager);
+        ViewTimes.setLayoutManager(layoutManager);
+        ViewTimes.setHasFixedSize(true);
+        ViewTimes.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
+        ViewTimes.setAdapter(adapter);
 
-        recyclerViewTimes.setHasFixedSize(true);
-
-        recyclerViewTimes.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
-
-        recyclerViewTimes.setAdapter(adapter);
-
-        recyclerViewTimes.addOnItemTouchListener(
+        ViewTimes.addOnItemTouchListener(
                 new RecyclerItemClickListener(
                         getApplicationContext(),
-                        recyclerViewTimes,
+                        ViewTimes,
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
                                 android.content.Intent it = new Intent(MainActivity.this, Intent.class);
                                 Bundle params =new Bundle();
-                                params.putInt("time", position);
+                                params.putInt("TimesF", position);
                                 it.putExtras(params);
                                 startActivity(it);
                             }

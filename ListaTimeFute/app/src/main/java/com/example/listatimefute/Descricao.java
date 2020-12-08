@@ -11,11 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class descricao extends RecyclerView.Adapter<descricao.MyViewHolder> {
+public class Descricao extends RecyclerView.Adapter<Descricao.MyViewHolder> {
 
     List<TimesFut> timesFutList;
 
-    public descricao(List<TimesFut> timesFutList) {
+    public Descricao(List<TimesFut> timesFutList) {
         this.timesFutList = timesFutList;
     }
 
