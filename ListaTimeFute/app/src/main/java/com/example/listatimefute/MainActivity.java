@@ -17,7 +17,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewTimes;
-    public static List<TimesFut> times = new ArrayList<>();
+    public static List<TimesFut> timesFutList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewTimes = findViewById(R.id.recyclerViewTimes);
 
         this.createTimes();
-        descricao adapter = new descricao(times);
+        descricao adapter = new descricao(timesFutList);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerViewTimes.setLayoutManager(layoutManager);
@@ -68,19 +68,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void createTimes(){
-        if(times.size() == 0) {
+        if(timesFutList.size() == 0) {
             String titulos = "Mundial Fifa Interclubes. 2000. 2012. \nLibertadores da América. 2012. \nRecopa Sul-Americana. 2013. \n Campeonato Brasileiro. 1990. 1998. 1999. 2005. 2011. 2015. 2017.";
-            TimesFut obj = new TimesFut("Corinthians", "SP", R.drawable.cor, titulos);
+            TimesFut obj = new TimesFut("Corinthians", "São Paulo-SP", R.drawable.cor, titulos);
             titulos = "Campeonato Brasileiro. 1985. \nCampeonato Brasileiro - Série B 2007, 2010. \nFestival Brasileiro 1997";
-            times.add(obj);
-            obj = new TimesFut("Coritiba", "PR", R.drawable.cfc, titulos);
-            times.add(obj);
+            timesFutList.add(obj);
+            obj = new TimesFut("Coritiba", "Curitiba-PR", R.drawable.cfc, titulos);
+            timesFutList.add(obj);
             titulos = "Campeonato Brasileiro - 1980, 1982, 1983, 1987, 1992, 2009 e 2019 \nCopa do Brasil - 1990, 2006 e 2013. \nLibertadores - 2019 \n Supercopa do Brasil - 2020.";
-            obj = new TimesFut("Flamengo", "RJ", R.drawable.fla, titulos);
-            times.add(obj);
+            obj = new TimesFut("Flamengo", "Rio de Janeiro-RJ", R.drawable.fla, titulos);
+            timesFutList.add(obj);
             titulos = "Copa Sul-Americana - 2018 \nCampeonato Brasileiro - 2001 \nCopa do Brasil - 2019";
-            obj = new TimesFut("Athletico", "PR", R.drawable.cap, titulos);
-            times.add(obj);
+            obj = new TimesFut("Athletico", "Curitiba-PR", R.drawable.cap, titulos);
+            timesFutList.add(obj);
         }
     }
 }

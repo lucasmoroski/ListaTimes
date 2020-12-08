@@ -7,6 +7,9 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Intent extends AppCompatActivity {
 
     TextView textViewNome, textViewCidade, textViewTitulos;
@@ -26,11 +29,11 @@ public class Intent extends AppCompatActivity {
             Bundle params = it.getExtras();
             if(params!=null){
                 int pos = params.getInt("time");
-                TimesFut time = MainActivity.times.get(pos);
-                textViewNome.setText(time.getNome());
-                textViewCidade.setText(time.getCidadeEstado());
-                imgView.setImageResource(time.getImg());
-                textViewTitulos.setText(time.getTitulos());
+                TimesFut TimesF = MainActivity.timesFutList.get(pos);
+                textViewNome.setText(TimesF.getNome());
+                textViewCidade.setText(TimesF.getCidadeEstado());
+                imgView.setImageResource(TimesF.getImg());
+                textViewTitulos.setText(TimesF.getTitulos());
             }
         }
     }

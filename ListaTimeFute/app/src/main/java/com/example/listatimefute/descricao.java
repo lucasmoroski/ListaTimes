@@ -13,10 +13,10 @@ import java.util.List;
 
 public class descricao extends RecyclerView.Adapter<descricao.MyViewHolder> {
 
-    List<TimesFut> times;
+    List<TimesFut> timesFutList;
 
-    public descricao(List<TimesFut> times) {
-        this.times = times;
+    public descricao(List<TimesFut> timesFutList) {
+        this.timesFutList = timesFutList;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -35,15 +35,13 @@ public class descricao extends RecyclerView.Adapter<descricao.MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View listItem = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_time, parent, false);
-
+        View listItem = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_time, parent, false);
         return new MyViewHolder(listItem);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        TimesFut obj = times.get(position);
+        TimesFut obj = timesFutList.get(position);
         holder.nome.setText(obj.getNome());
         holder.cidade.setText(obj.getCidadeEstado());
         holder.img.setImageResource(obj.getImg());
@@ -51,6 +49,6 @@ public class descricao extends RecyclerView.Adapter<descricao.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return times.size();
+        return timesFutList.size();
     }
 }
