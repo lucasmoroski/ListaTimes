@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    
+
     private RecyclerView recyclerViewTimes;
     public static List<TimesFut> times = new ArrayList<>();
 
@@ -69,17 +69,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void createTimes(){
         if(times.size() == 0) {
-            String titulos = "Campeonato Catarinense(2013) \nCampeonato Brasileiro Série C(2006) \nCampeonato Catarinense(2005)";
-            TimesFut obj = new TimesFut("Criciúma", "Criciúma-SC", R.drawable.cor, titulos);
-            titulos = "Campeonato Brasileiro(2008) \nCampeonato Brasileiro (2007) \nMundial(2005)";
+            String titulos = "Mundial Fifa Interclubes. 2000. 2012. \nLibertadores da América. 2012. \nRecopa Sul-Americana. 2013. \n Campeonato Brasileiro. 1990. 1998. 1999. 2005. 2011. 2015. 2017.";
+            TimesFut obj = new TimesFut("Corinthians", "SP", R.drawable.cor, titulos);
+            titulos = "Campeonato Brasileiro. 1985. \nCampeonato Brasileiro - Série B 2007, 2010. \nFestival Brasileiro 1997";
             times.add(obj);
-            obj = new TimesFut("São Paulo", "São Paulo-SP", R.drawable.fla, titulos);
+            obj = new TimesFut("Coritiba", "PR", R.drawable.cfc, titulos);
             times.add(obj);
-            titulos = "Campeonato Carioca(2020) \nCampeonato Brasileiro (2019) \nLibertadores(2019)";
-            obj = new TimesFut("Flamengo", "Rio de Janeiro-RJ", R.drawable.cfc, titulos);
+            titulos = "Campeonato Brasileiro - 1980, 1982, 1983, 1987, 1992, 2009 e 2019 \nCopa do Brasil - 1990, 2006 e 2013. \nLibertadores - 2019 \n Supercopa do Brasil - 2020.";
+            obj = new TimesFut("Flamengo", "RJ", R.drawable.fla, titulos);
             times.add(obj);
-            titulos = "Campeonato Mineiro(2019) \nCampeonato Mineiro (2018) \nCopa do Brasil(2018)";
-            obj = new TimesFut("Cruzeiro", "Belo Horizonte-MG", R.drawable.cap, titulos);
+            titulos = "Copa Sul-Americana - 2018 \nCampeonato Brasileiro - 2001 \nCopa do Brasil - 2019";
+            obj = new TimesFut("Athletico", "PR", R.drawable.cap, titulos);
             times.add(obj);
         }
     }
